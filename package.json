@@ -1,0 +1,23 @@
+{
+  "name": "recipe-app-front",
+  "version": "1.0.0",
+  "description": "This is simple front-end for my Recipe app.",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/index.scss css/style.css -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VitaliiLynnyk/recipe-app-front.git"
+  },
+  "author": "vitalii lynnyk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VitaliiLynnyk/recipe-app-front/issues"
+  },
+  "homepage": "https://github.com/VitaliiLynnyk/recipe-app-front#readme",
+  "devDependencies": {
+    "node-sass": "^4.13.1"
+  }
+}
