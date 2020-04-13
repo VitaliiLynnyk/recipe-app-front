@@ -1,3 +1,131 @@
 .login-page {
-  background-color: red;
+  color: #fff;
+
+  .main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7f7f7f;
+  }
+}
+
+.container {
+  width: 55%;
+  height: 70%;
+  box-shadow: 0 1rem 4rem rgba(#333, 0.9);
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  transition: all 0.3s;
+
+  &__left {
+    flex: 50%;
+    position: relative;
+    transition: all 0.3s;
+    background: url('../img/login-up.jpg');
+    background-size: cover;
+
+    &-first {
+      opacity: 0;
+      visibility: hidden;
+
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    &-second {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      width: 90%;
+      text-align: center;
+    }
+  }
+
+  &__right {
+    flex: 50%;
+    background-color: #222;
+    position: relative;
+    transition: all 0.3s;
+
+    &-first {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    &-second {
+      opacity: 0;
+      visibility: hidden;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      width: 90%;
+      text-align: center;
+    }
+  }
+
+  &:target &__right-first,
+  &:target &__left-second {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &:target &__right-second,
+  &:target &__left-first {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:target &__left {
+    transform: translateX(100%);
+  }
+
+  &:target &__right {
+    transform: translateX(-100%);
+  }
+}
+
+.form {
+  &__input {
+    font-size: 1.6rem;
+    font-family: inherit;
+    color: #000;
+    padding: 1rem 2rem;
+    border-radius: 2px;
+    background-color: rgba(#eee, 0.7);
+    border: none;
+    border-bottom: 3px solid transparent;
+    width: 85%;
+    margin: 2rem auto;
+    display: block;
+    transition: all 0.3s;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba(#eee, 0.1);
+      border-bottom: 3px solid #fff;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid #ff2323;
+    }
+
+    &::-webkit-input-placeholder {
+      color: #fff;
+    }
+  }
 }

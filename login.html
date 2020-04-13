@@ -1,18 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-      <meta charset="UTF-8">
-      <meta name="viewport"
-            content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+  </head>
 
-      <link rel="stylesheet"
-            href="css/style.css" />
-      <title>Document</title>
-</head>
-
-<body class="main-page">
-      <h1>main page</h1>
-</body>
-
+  <body class="login-page">
+    <main class="main" id="main">
+      <div class="container" id="container">
+        <div class="container__left">
+          <div class="container__left-first">
+            <form action="#" class="form">
+              <h2 class="heading-secondary">Sign Up</h2>
+              <div class="form__group">
+                <input
+                  type="text"
+                  class="form__input"
+                  placeholder="full name"
+                  required
+                />
+                <input
+                  type="email"
+                  class="form__input"
+                  placeholder="email"
+                  required
+                />
+                <input
+                  type="password"
+                  class="form__input"
+                  placeholder="password"
+                  required
+                />
+                <a href="#container" class="btn btn--green">
+                  Sign UP
+                </a>
+              </div>
+            </form>
+          </div>
+          <div class="container__left-second">
+            <h2 class="heading-secondary">
+              Hello Friend !
+            </h2>
+            <p>
+              Enter your personal details, and start Journey with us.
+            </p>
+            <a href="#container" class="btn-text">
+              Sign UP →
+            </a>
+          </div>
+        </div>
+        <div class="container__right">
+          <div class="container__right-first">
+            <form action="#" class="form">
+              <h2 class="heading-secondary">Sign In</h2>
+              <div class="form__group">
+                <input
+                  type="email"
+                  class="form__input"
+                  placeholder="email"
+                  required
+                />
+                <input
+                  type="password"
+                  class="form__input"
+                  placeholder="password"
+                  required
+                />
+                <a href="#main" class="btn btn--green">
+                  Sign IN
+                </a>
+              </div>
+            </form>
+          </div>
+          <div class="container__right-second">
+            <h2 class="heading-secondary">
+              Welcome Back !
+            </h2>
+            <p>
+              To keep connect with us, please login with your personal info.
+            </p>
+            <a href="#main" class="btn-text">
+              Sign In →
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>

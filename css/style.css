@@ -1,5 +1,164 @@
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+ORDER: Base + typography > general layout + grid > page layout > components
+1em = 16px
+*/
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+
+body {
+  box-sizing: border-box;
+  font-size: 2rem; }
+  @media only screen and (max-width: 56.25em) {
+    body {
+      padding: 0; } }
+
 .login-page {
-  background-color: red; }
+  color: #fff; }
+  .login-page .main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7f7f7f; }
+
+.container {
+  width: 55%;
+  height: 70%;
+  box-shadow: 0 1rem 4rem rgba(51, 51, 51, 0.9);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  transition: all 0.3s; }
+  .container__left {
+    flex: 50%;
+    position: relative;
+    transition: all 0.3s;
+    background: url("../img/login-up.jpg");
+    background-size: cover; }
+    .container__left-first {
+      opacity: 0;
+      visibility: hidden;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center; }
+    .container__left-second {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      text-align: center; }
+  .container__right {
+    flex: 50%;
+    background-color: #222;
+    position: relative;
+    transition: all 0.3s; }
+    .container__right-first {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center; }
+    .container__right-second {
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      text-align: center; }
+  .container:target .container__right-first,
+  .container:target .container__left-second {
+    opacity: 0;
+    visibility: hidden; }
+  .container:target .container__right-second,
+  .container:target .container__left-first {
+    opacity: 1;
+    visibility: visible; }
+  .container:target .container__left {
+    transform: translateX(100%); }
+  .container:target .container__right {
+    transform: translateX(-100%); }
+
+.form__input {
+  font-size: 1.6rem;
+  font-family: inherit;
+  color: #000;
+  padding: 1rem 2rem;
+  border-radius: 2px;
+  background-color: rgba(238, 238, 238, 0.7);
+  border: none;
+  border-bottom: 3px solid transparent;
+  width: 85%;
+  margin: 2rem auto;
+  display: block;
+  transition: all 0.3s; }
+  .form__input:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(238, 238, 238, 0.1);
+    border-bottom: 3px solid #fff; }
+  .form__input:focus:invalid {
+    border-bottom: 3px solid #ff2323; }
+  .form__input::-webkit-input-placeholder {
+    color: #fff; }
 
 .main-page {
   background-color: green; }
