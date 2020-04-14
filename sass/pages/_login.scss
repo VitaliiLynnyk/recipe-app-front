@@ -2,8 +2,8 @@
   color: $color-white;
 
   .main {
-    width: 100vw;
-    height: 100vh;
+    min-width: 100vw;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,7 +13,7 @@
 
 .container {
   width: 55%;
-  height: 70%;
+  min-height: 60rem;
   box-shadow: 0 1rem 4rem rgba($color-white, 0.4);
 
   display: flex;
@@ -21,8 +21,8 @@
   flex-wrap: wrap;
   transition: all 0.3s;
 
-  @include respond(tab-port) {
-    width: 90%;
+  @include respond(phone) {
+    width: 100%;
     flex-direction: column;
   }
 
@@ -101,7 +101,7 @@
   &:target &__left {
     transform: translateX(100%);
 
-    @include respond(tab-port) {
+    @include respond(phone) {
       transform: translateY(100%);
     }
   }
@@ -109,7 +109,7 @@
   &:target &__right {
     transform: translateX(-100%);
 
-    @include respond(tab-port) {
+    @include respond(phone) {
       transform: translateY(-100%);
     }
   }
