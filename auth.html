@@ -16,30 +16,31 @@
       <div class="container" id="container">
         <div class="container__left">
           <div class="container__left-first">
-            <form action="#" class="form">
+            <form class="form" id="signUpForm">
               <h2 class="heading-secondary">Sign Up</h2>
               <div class="form__group">
                 <input
                   type="text"
                   class="form__input"
+                  name="name"
                   placeholder="full name"
                   required
                 />
                 <input
                   type="email"
                   class="form__input"
+                  name="email"
                   placeholder="email"
                   required
                 />
                 <input
                   type="password"
                   class="form__input"
+                  name="password"
                   placeholder="password"
                   required
                 />
-                <a href="#container" class="btn btn--green">
-                  Sign UP
-                </a>
+                <input type="submit" class="btn btn--green" value="sign up" />
               </div>
             </form>
           </div>
@@ -57,24 +58,24 @@
         </div>
         <div class="container__right">
           <div class="container__right-first">
-            <form action="#" class="form">
+            <form class="form" id="signInForm">
               <h2 class="heading-secondary">Sign In</h2>
               <div class="form__group">
                 <input
                   type="email"
                   class="form__input"
                   placeholder="email"
+                  name="email"
                   required
                 />
                 <input
                   type="password"
                   class="form__input"
                   placeholder="password"
+                  name="password"
                   required
                 />
-                <a href="#main" class="btn btn--green">
-                  Sign IN
-                </a>
+                <input type="submit" class="btn btn--green" value="Sign IN" />
               </div>
             </form>
           </div>
@@ -93,4 +94,6 @@
       </div>
     </main>
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+  <script src="js/auth.js"></script>
 </html>
