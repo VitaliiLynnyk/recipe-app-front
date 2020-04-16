@@ -26,6 +26,16 @@ function setActiveItems(el, name) {
 
 const createItem = (item) => {
   const { id, name, description, imgUrl } = item;
+
+  const settingsDomEl = document.createElement('div');
+  settingsDomEl.setAttribute('class', 'item_settings');
+
+  const editDomEl = document.createElement('span');
+  editDomEl.innerHTML = '&#62;';
+
+  const removeDomEl = document.createElement('span');
+  removeDomEl.innerHTML = '&#215;';
+
   const itemDomEl = document.createElement('div');
   itemDomEl.setAttribute('id', `${id}`);
   itemDomEl.setAttribute('class', 'item');
@@ -49,6 +59,9 @@ const createItem = (item) => {
   pDomEl.innerText = textTruncate(description);
   pDomEl.setAttribute('class', 'item_description');
 
+  settingsDomEl.appendChild(editDomEl);
+  settingsDomEl.appendChild(removeDomEl);
+  itemDomEl.appendChild(settingsDomEl);
   itemDomEl.appendChild(titleDomEl);
   itemDomEl.appendChild(imgDomEl);
   itemDomEl.appendChild(pDomEl);

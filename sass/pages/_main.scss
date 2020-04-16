@@ -24,6 +24,32 @@
   }
 
   .item {
+    position: relative;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 1rem 4rem rgba($color-white, 0.4);
+    }
+
+    &_settings {
+      position: absolute;
+      right: 0;
+      top: -24px;
+      display: flex;
+      flex-direction: row;
+      font-size: 4rem;
+
+      > * {
+        &:hover {
+          color: $color-danger;
+        }
+      }
+
+      @include respond(tab-land) {
+        font-size: $default-font-size;
+      }
+    }
+
     &_title {
       text-align: center;
     }
