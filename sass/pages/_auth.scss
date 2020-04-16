@@ -1,17 +1,12 @@
-.login-page {
-  color: $color-white;
-
-  .main {
-    min-width: 100vw;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $bg-color;
-  }
+.wrapper {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.container {
+.auth-page-container {
   width: 55%;
   min-height: 60rem;
   box-shadow: 0 1rem 4rem rgba($color-white, 0.4);
@@ -180,4 +175,9 @@
       box-shadow: 0 1rem 2rem rgba($color-white, 0.2);
     }
   }
+}
+
+.active-link {
+  border-bottom: 0.1rem solid $color-danger;
+  color: $color-danger;
 }

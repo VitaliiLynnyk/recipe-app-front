@@ -95,7 +95,9 @@ body {
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  color: #fff;
+  background-color: #232532; }
   @media only screen and (max-width: 75em) {
     html {
       font-size: 56.25%; } }
@@ -113,17 +115,14 @@ body {
     body {
       padding: 0; } }
 
-.login-page {
-  color: #fff; }
-  .login-page .main {
-    min-width: 100vw;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #232532; }
+.wrapper {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
-.container {
+.auth-page-container {
   width: 55%;
   min-height: 60rem;
   box-shadow: 0 1rem 4rem rgba(255, 255, 255, 0.4);
@@ -132,16 +131,16 @@ body {
   flex-wrap: wrap;
   transition: all 0.3s; }
   @media only screen and (max-width: 37.5em) {
-    .container {
+    .auth-page-container {
       width: 100%;
       flex-direction: column; } }
-  .container__left {
+  .auth-page-container__left {
     flex: 50%;
     position: relative;
     transition: all 0.3s;
     background: linear-gradient(rgba(0, 0, 0, 0.4) 100%, rgba(0, 0, 0, 0.4) 100%), url("../img/login-up.jpg");
     background-size: cover; }
-    .container__left-first {
+    .auth-page-container__left-first {
       opacity: 0;
       visibility: hidden;
       height: 100%;
@@ -149,24 +148,24 @@ body {
       justify-content: center;
       align-items: center;
       text-align: center; }
-    .container__left-second {
+    .auth-page-container__left-second {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       width: 90%;
       text-align: center; }
-  .container__right {
+  .auth-page-container__right {
     flex: 50%;
     position: relative;
     transition: all 0.3s; }
-    .container__right-first {
+    .auth-page-container__right-first {
       height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center; }
-    .container__right-second {
+    .auth-page-container__right-second {
       opacity: 0;
       visibility: hidden;
       position: absolute;
@@ -175,23 +174,23 @@ body {
       transform: translate(-50%, -50%);
       width: 90%;
       text-align: center; }
-  .container:target .container__right-first,
-  .container:target .container__left-second {
+  .auth-page-container:target .auth-page-container__right-first,
+  .auth-page-container:target .auth-page-container__left-second {
     opacity: 0;
     visibility: hidden; }
-  .container:target .container__right-second,
-  .container:target .container__left-first {
+  .auth-page-container:target .auth-page-container__right-second,
+  .auth-page-container:target .auth-page-container__left-first {
     opacity: 1;
     visibility: visible; }
-  .container:target .container__left {
+  .auth-page-container:target .auth-page-container__left {
     transform: translateX(100%); }
     @media only screen and (max-width: 37.5em) {
-      .container:target .container__left {
+      .auth-page-container:target .auth-page-container__left {
         transform: translateY(100%); } }
-  .container:target .container__right {
+  .auth-page-container:target .auth-page-container__right {
     transform: translateX(-100%); }
     @media only screen and (max-width: 37.5em) {
-      .container:target .container__right {
+      .auth-page-container:target .auth-page-container__right {
         transform: translateY(-100%); } }
 
 .form__input {
@@ -241,5 +240,37 @@ body {
     color: #4c5368;
     box-shadow: 0 1rem 2rem rgba(255, 255, 255, 0.2); }
 
-.main-page {
-  background-color: green; }
+.active-link {
+  border-bottom: 0.1rem solid #ff2323;
+  color: #ff2323; }
+
+.main-page-container {
+  min-height: 100vh;
+  min-width: 100vw;
+  padding: 5rem;
+  display: flex;
+  flex-wrap: wrap; }
+
+.main-page .list {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  height: 100%; }
+
+.main-page .items-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  margin: 5rem; }
+
+.main-page .item_title {
+  text-align: center; }
+
+.main-page .item_img {
+  max-width: 100%;
+  max-height: 100%; }
+
+.main-page .item_description {
+  word-break: break-all; }

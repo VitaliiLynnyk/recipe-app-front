@@ -1,3 +1,40 @@
 .main-page {
-  background-color: green;
+  &-container {
+    min-height: 100vh;
+    min-width: 100vw;
+    padding: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .list {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+  }
+
+  .items-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    margin: 5rem;
+  }
+
+  .item {
+    &_title {
+      text-align: center;
+    }
+
+    &_img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    &_description {
+      word-break: break-all;
+    }
+  }
 }
