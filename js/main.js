@@ -57,7 +57,7 @@ const createItem = (item) => {
 
   const pDomEl = document.createElement('p');
   pDomEl.innerText = textTruncate(description);
-  pDomEl.setAttribute('class', 'item_description');
+  pDomEl.setAttribute('class', 'paragraph');
 
   settingsDomEl.appendChild(editDomEl);
   settingsDomEl.appendChild(removeDomEl);
@@ -87,7 +87,7 @@ function removeAllChildren(node) {
   }
 }
 
-function textTruncate(str, length = 20, ending = '...') {
+function textTruncate(str = '', length = 100, ending = '...') {
   if (str.length > length) {
     return str.substring(0, length - ending.length) + ending;
   } else {

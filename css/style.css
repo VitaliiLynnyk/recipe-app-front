@@ -264,9 +264,17 @@ body {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
   margin: 5rem; }
+  @media only screen and (max-width: 75em) {
+    .main-page .items-list {
+      grid-template-columns: repeat(2, 1fr);
+      margin: 5rem auto; } }
+  @media only screen and (max-width: 37.5em) {
+    .main-page .items-list {
+      grid-template-columns: 1fr; } }
 
 .main-page .item {
-  position: relative; }
+  position: relative;
+  text-align: center; }
   .main-page .item:hover {
     cursor: pointer;
     box-shadow: 0 1rem 4rem rgba(255, 255, 255, 0.4); }
@@ -285,7 +293,8 @@ body {
   .main-page .item_title {
     text-align: center; }
   .main-page .item_img {
-    max-width: 100%;
-    max-height: 100%; }
+    box-shadow: 0 10px 20px rgba(16, 255, 255, 0.19), 0 6px 6px rgba(16, 255, 255, 0.23);
+    width: 30rem;
+    max-width: 100%; }
   .main-page .item_description {
     word-break: break-all; }
