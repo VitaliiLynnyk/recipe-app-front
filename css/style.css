@@ -260,6 +260,7 @@ body {
 
 .main-page .items-list {
   width: 100%;
+  min-height: 100vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
@@ -298,3 +299,6 @@ body {
     max-width: 100%; }
   .main-page .item_description {
     word-break: break-all; }
+
+.main-page .form {
+  margin: 5rem; }

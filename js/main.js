@@ -94,3 +94,30 @@ function textTruncate(str = '', length = 100, ending = '...') {
     return str;
   }
 }
+
+const forms = document.querySelectorAll('form');
+
+forms.forEach((form) => {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    new FormData(form);
+    form.reset();
+  });
+});
+
+forms.forEach((form) => {
+  form.addEventListener('formdata', (e) => {
+    const data = Object.fromEntries(e.formData);
+    const formName = e.target.getAttribute('name');
+
+    postDataToApi(`${URL}/${formName}`, data)
+      .then((res) => {
+        if (res.status === 201) {
+          alert(`${formName} with name ${data.name} created`);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
+});

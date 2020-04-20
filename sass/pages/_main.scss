@@ -17,6 +17,7 @@
 
   .items-list {
     width: 100%;
+    min-height: 100vh;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2rem;
@@ -74,5 +75,9 @@
     &_description {
       word-break: break-all;
     }
+  }
+
+  .form {
+    margin: 5rem;
   }
 }

@@ -42,6 +42,53 @@
           </li>
         </ul>
         <div class="items-list"></div>
+        <form class="form" name="ingredient">
+          <h2 class="heading-secondary">add ingredient</h2>
+          <div class="form__group">
+            <input
+              type="text"
+              class="form__input"
+              placeholder="name"
+              name="name"
+              required
+            />
+            <input
+              type="text"
+              class="form__input"
+              placeholder="imgUrl"
+              name="imgUrl"
+              required
+            />
+            <input
+              type="text"
+              class="form__input"
+              placeholder="DAIRY,FRUITS,GRAINS,PROTEIN,VEGETABLES"
+              name="category"
+              required
+            />
+            <input type="submit" class="btn btn--green" value="Add" />
+          </div>
+        </form>
+        <form class="form" name="nutrition">
+          <h2 class="heading-secondary">add nutrition</h2>
+          <div class="form__group">
+            <input
+              type="text"
+              class="form__input"
+              placeholder="name"
+              name="name"
+              required
+            />
+            <input
+              type="text"
+              class="form__input"
+              placeholder="description"
+              name="description"
+              required
+            />
+            <input type="submit" class="btn btn--green" value="Add" />
+          </div>
+        </form>
       </section>
     </main>
   </body>
