@@ -36,6 +36,8 @@ const createItem = (item) => {
   const removeDomEl = document.createElement('span');
   removeDomEl.innerHTML = '&#215;';
 
+  removeDomEl.addEventListener('click', (e) => removeDomElListener(e));
+
   const itemDomEl = document.createElement('div');
   itemDomEl.setAttribute('id', `${id}`);
   itemDomEl.setAttribute('class', 'item');
@@ -93,6 +95,20 @@ function textTruncate(str = '', length = 100, ending = '...') {
   } else {
     return str;
   }
+}
+
+function removeDomElListener(el) {
+  const currElId = el.target.parentNode.parentNode.id;
+  const currLinkName = document.querySelector('.active-link').name;
+
+  deleteDataFromApi(`${URL}/${currLinkName}/${currElId}`)
+    .then((res) => {
+      console.log(res);
+      alert(`el from ${currLinkName} with id=${currElId} removed`);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 }
 
 const forms = document.querySelectorAll('form');

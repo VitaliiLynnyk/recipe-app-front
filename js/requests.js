@@ -28,3 +28,18 @@ async function getDataFromApi(url) {
   };
   return await axios.get(url, config);
 }
+
+async function deleteDataFromApi(url) {
+  const token = localStorage.getItem('accessToken');
+  const config = {
+    headers: {
+      mode: 'no-cors',
+      Authorization: `Bearer ${token}`,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
+      },
+    },
+  };
+  return await axios.delete(url, config);
+}
